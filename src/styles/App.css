@@ -26,7 +26,7 @@ header {
 /* Editor */
 .editorForm {
   grid-column: 1/6;
-  padding: 5px;
+  padding: 1em;
   border-radius: 5px;
   background-color: white;
   display: flex;
@@ -38,7 +38,7 @@ header {
 
 .input-form{
   display: grid;
-  gap: 5px;
+  gap: 1em;
 }
 
 .form-header {
@@ -56,17 +56,34 @@ header {
   grid-template-columns:auto;
 }
 
+.input-form .input-dates-container {
+  display: flex;
+  gap: 2.5em;
+}
+
+.input-form .input-dates {
+  flex-grow: 1;
+}
+
+.input-form .form-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+
+
 .input-form button {
-  
-  display: inline-block;
+  flex-grow: 1;
   outline: none;
   cursor: pointer;
   border-radius: 3px;
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
+  margin-top: 20px;
   padding: 2px 16px;
-  margin: 10px auto 0 auto;
   height: 32px;
   width: fit-content;
   min-width: 100px;
@@ -80,7 +97,13 @@ header {
       background-color: var(--secondary-base-dark)
   }
 
+.input-form button.btn-cancel {
+  background-color: rgb(172, 19, 19);
+}
 
+.input-form button.btn-cancel:hover {
+  background-color: rgb(142, 18, 18);
+}
 /* CV */
 .cv{
   grid-column: 6/-1;
@@ -89,10 +112,8 @@ header {
   justify-content: flex-start;
   align-items: center;
 
-  padding: 5px;
+  padding: 1em;
   border-radius: 5px;
   background-color: white
-
-
 }
 

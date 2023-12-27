@@ -3,7 +3,7 @@ import { FaDeleteLeft } from "react-icons/fa6";
 import { MdModeEditOutline } from "react-icons/md";
 
 
-export default function CvSection({header, fields, label, onDelete}) {
+export default function CvSection({header, fields, label, onEdit, onDelete}) {
 
     const formatDate = (dateString) => {
         const options = { year: '2-digit', month: 'short'}
@@ -27,7 +27,7 @@ export default function CvSection({header, fields, label, onDelete}) {
                                 <div className='cv-item-description'>
                                     <p >{f.description}</p>
                                 </div>
-                                <MdModeEditOutline className="cv-item-icon" onClick={() =>onDelete(f.id, label)}/>
+                                <MdModeEditOutline className="cv-item-icon" onClick={() =>onEdit(f.id, label)}/>
                                 <FaDeleteLeft className="cv-item-icon" onClick={() =>onDelete(f.id, label)}/>
                             </div> 
                         )

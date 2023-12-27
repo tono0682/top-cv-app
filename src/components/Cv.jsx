@@ -6,15 +6,15 @@ import CvSection from './CvSection';
 
 
 
-export default function Cv({ name, email, phone, experience, education, onDelete}) {
+export default function Cv({ name, email, phone, experience, education, onEdit, onDelete}) {
     
     return(
         <div className='cv-container'>
             <div className="cv-contact">
-                <p className="cv-name">{name ? name:"Full Name"}</p>
+                <p className="cv-name">{name ? name:"Joe Blogs"}</p>
                 <div>
                     <MdEmail color="#00a8e8"/>
-                    <p>{email ? email:"abc@xyz.com"}</p>
+                    <p>{email ? email:"joe.blogs@xyz.com"}</p>
                 </div>
                 <div>
                     <FaPhoneAlt color="#00a8e8" />
@@ -22,8 +22,8 @@ export default function Cv({ name, email, phone, experience, education, onDelete
                 </div>
                 <hr />
             </div>
-            <CvSection header="Experience" fields={experience} label="company" onDelete={onDelete}/>
-            <CvSection header="Education" fields={education} label="institution" onDelete={onDelete}/>
+            <CvSection header="Experience" fields={experience} label="company" onEdit={onEdit} onDelete={onDelete}/>
+            <CvSection header="Education" fields={education} label="institution" onEdit={onEdit} onDelete={onDelete}/>
         </div>
     )
 }
