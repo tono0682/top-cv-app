@@ -22,11 +22,11 @@ export default function ContactForm({ name, email, phone, onNameChange, onEmailC
                     </div>
                     <div>
                         <label htmlFor="email">Email</label>
-                        <input type="text" value={email} onChange={onEmailChange}  id="email" />
+                        <input type="email" value={email} onChange={onEmailChange}  id="email" />
                     </div>
                     <div>
                         <label htmlFor="phone">Phone</label>
-                        <input type="text" value={phone} onChange={onPhoneChange}  id="phone" />
+                        <input type="tel" value={phone} onChange={onPhoneChange}  id="phone" />
                     </div>
                 </form>
             }
