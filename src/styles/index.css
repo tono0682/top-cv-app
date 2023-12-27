@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+*, *::before, *::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Roboto", Times, serif;
+
+  --primary-base: #00171f;
+  --primary-on: #ffffff;
+  --secondary-base: #00a8e8;
+  --secondary-base-dark:#019dda;
+  --secondary-on: #ffffff;
+}
+
+.seondary-color {
+  color: var(--secondary-base)
+}
+
+html {
+  /* background-color: red; */
+  height: 100%;
+  /* background: rgb(0,168,232); */
+}
+
+html > * {
+  padding: 1em;
+}
+
+body {
+  height: 100%;
+  background-color: var(--primary-base);
+  
+  /* background-color: yellow; */
+}
+
+#root {
+  /* background-color: green; */
+  height: 100%
+}
+
+h1, h2 {
+  margin: 0.5em;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 2.5em;
+  color: var(--primary-on);
+  letter-spacing: 0.1em;
+}
+
+h1 span.h1-capital {
+  font-size: 1.5em;
+  color: var(--secondary-base);
+
+}
+
+h2 {
+  text-align: center;
+  color: var(--secondary-base);
+}
+
+form {
+  margin-top: 0.5em;
+}
+
+label {
+  font-weight: 500;
+}
+input {
+  height: 2em;
+  border-radius: 5px;
+  border: none;
+  padding: 0 5px;
+}
+
