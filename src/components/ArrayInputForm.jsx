@@ -63,7 +63,7 @@ export default function ArrayInputForm({title, header, formInputValues, onSubmit
                         <div className='input-dates'>
                             <label htmlFor="startDate">Start Date</label>
                             <input
-                            type="date"
+                            type="month"
                             id="startDate"
                             name="startDate"
                             value={startDate}
@@ -73,7 +73,7 @@ export default function ArrayInputForm({title, header, formInputValues, onSubmit
                         <div className='input-dates'>
                             <label htmlFor="endDate">End Date</label>
                             <input
-                            type="date"
+                            type="month"
                             id="endDate"
                             name="endDate"
                             value={endDate}
