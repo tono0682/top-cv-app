@@ -41,6 +41,16 @@ header {
   gap: 5px;
 }
 
+.form-header {
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+}
+
+.form-header h3 {
+  flex-grow: 1;
+}
+
 .input-form div {
   display: grid;
   grid-template-columns:auto;

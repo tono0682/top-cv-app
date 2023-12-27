@@ -45,6 +45,8 @@ function App() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  
+  const [activeFormId, setActiveFormId] = useState(0);
 
   const [experience, setExperience] = useState(fakeExperienceArray);
   const [education, setEducation] = useState(fakeEducationArray);
@@ -103,6 +105,10 @@ function App() {
     }
   }
 
+  function handleOpenForm(formId) {
+    setActiveFormId(formId);
+  }
+
   return (
       <div className='main-container '>
         <header className="header">
@@ -117,16 +123,25 @@ function App() {
             onNameChange={handleNameChange} 
             onEmailChange={handleEmailChange}
             onPhoneChange={handlePhoneChange}
+            formId = {0}
+            activeFormId={activeFormId}
+            onFormClick={handleOpenForm}
           />
           <ArrayInputForm
             title="Experience"
             header="Company"
             onSubmit= {handleExperienceSubmit}
+            formId = {1}
+            activeFormId={activeFormId}
+            onFormClick={handleOpenForm}
           />
           <ArrayInputForm
             title="Education"
             header="Institution"
             onSubmit= {handleEducationSubmit}
+            formId = {2}
+            activeFormId={activeFormId}
+            onFormClick={handleOpenForm}
           />
 
 
