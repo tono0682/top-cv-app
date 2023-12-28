@@ -3,6 +3,7 @@ import '../styles/App.css'
 import ContactForm from './ContactForm'
 import CV from './Cv.jsx'
 import ArrayInputForm from './ArrayInputForm.jsx';
+import ColorPicker from './ColorPicker.jsx';
 
 let nextId = 3;
 
@@ -196,6 +197,7 @@ function App() {
         </header>
         <section className="editorForm">
           <h2>Editor</h2>
+          <ColorPicker/>
           <ContactForm 
             name={name} 
             email={email} 

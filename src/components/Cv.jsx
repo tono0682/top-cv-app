@@ -13,11 +13,11 @@ export default function Cv({ name, email, phone, experience, education, onEdit, 
             <div className="cv-contact">
                 <p className="cv-name">{name ? name:"Joe Blogs"}</p>
                 <div>
-                    <MdEmail color="#00a8e8"/>
+                    <MdEmail className='secondary-color'/>
                     <p>{email ? email:"joe.blogs@xyz.com"}</p>
                 </div>
                 <div>
-                    <FaPhoneAlt color="#00a8e8" />
+                    <FaPhoneAlt className='secondary-color'/>
                     <p>{phone ? phone:"1234 5678"}</p>
                 </div>
                 <hr />
