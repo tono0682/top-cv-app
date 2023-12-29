@@ -6,10 +6,10 @@ import CvSection from './CvSection';
 
 
 
-export default function Cv({ name, email, phone, experience, education, onEdit, onDelete}) {
+export default function Cv({ name, email, phone, experience, education, onEdit, onDelete, reference}) {
     
     return(
-        <div className='cv-container'>
+        <div id="cv-container" className='cv-container' ref={reference}>
             <div className="cv-contact">
                 <p className="cv-name">{name ? name:"Joe Blogs"}</p>
                 <div>

@@ -5,6 +5,10 @@ import CV from './Cv.jsx'
 import ArrayInputForm from './ArrayInputForm.jsx';
 import ColorPicker from './ColorPicker.jsx';
 
+import { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
+
+
 let nextId = 3;
 
 
@@ -65,6 +69,24 @@ const defaultFormInputs = {
 }
 
 function App() {
+  // print test
+  const componentRef = useRef();
+  function togglePrintMode() {
+    const el = document.getElementById("cv-container");
+    el.classList.toggle('cv-print');
+  }
+  const handlePrintContent = useReactToPrint({ 
+    content: () => componentRef.current,
+    documentTitle: `My Resume`
+  });
+
+  function handlePrint() {
+    togglePrintMode();
+    handlePrintContent();
+    togglePrintMode();
+  }
+
+
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -231,8 +253,7 @@ function App() {
             isEditMode={isEditMode}
             onCancel={handleCancelEdit}
           />
-
-
+          <button onClick={handlePrint}>Print</button>
         </section>
         <section className="cv">
           <CV 
@@ -243,9 +264,13 @@ function App() {
             education={education}
             onDelete={handleDelete}
             onEdit={handleEdit}
+            reference={componentRef}
           />
+
         </section>
+
       </div>
+      
   )
 }
 
