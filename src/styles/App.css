@@ -92,7 +92,7 @@ header {
   transition: background-color .17s ease,color .17s ease;
 }
 .input-form button:hover {
-      background-color: var(--secondary-base-dark)
+      filter: brightness(95%);
   }
 
 .input-form button.btn-cancel {

@@ -4,7 +4,9 @@ export default function ColorPicker() {
         document.documentElement.style.setProperty(key, val);
     }
     return (
-        <input 
+        <div style={{display:"flex", justifyContent:"flex-start", alignItems:"center", gap:"1em"}}>
+            <h3>Customize Color</h3>
+            <input 
             id="color-picker" 
             type="color" 
             defaultValue = {getComputedStyle(document.documentElement).getPropertyValue('--secondary-base')}
@@ -13,5 +15,6 @@ export default function ColorPicker() {
                 updateProperty("--secondary-base", newColor );
             }}
         />
+        </div>
     )
 }
