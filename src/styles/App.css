@@ -126,6 +126,30 @@ input[type="color"]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
 
+/* Print */
+button.print-btn {
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  margin-top: 20px;
+  padding: 2px 16px;
+  height: 32px;
+  width: fit-content;
+  min-width: 100px;
+  min-height: 32px;
+  border: none;
+  color: var(--secondary-on);
+  background-color: var(--secondary-base);
+  transition: background-color .17s ease,color .17s ease;
+}
+button.print-btn:hover {
+      filter: brightness(95%);
+  }
+
+
 /* CV */
 .cv{
   grid-column: 6/-1;

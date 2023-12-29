@@ -1,17 +1,14 @@
-import {useState} from 'react'
+import {useState, useRef} from 'react'
+import { useReactToPrint } from 'react-to-print';
 import '../styles/App.css'
 import ContactForm from './ContactForm'
 import CV from './Cv.jsx'
 import ArrayInputForm from './ArrayInputForm.jsx';
 import ColorPicker from './ColorPicker.jsx';
-
-import { useRef } from 'react';
-import { useReactToPrint } from 'react-to-print';
+import Print from './Print.jsx'
 
 
 let nextId = 3;
-
-
 
 const fakeExperienceArray = [
   {
@@ -69,24 +66,6 @@ const defaultFormInputs = {
 }
 
 function App() {
-  // print test
-  const componentRef = useRef();
-  function togglePrintMode() {
-    const el = document.getElementById("cv-container");
-    el.classList.toggle('cv-print');
-  }
-  const handlePrintContent = useReactToPrint({ 
-    content: () => componentRef.current,
-    documentTitle: `My Resume`
-  });
-
-  function handlePrint() {
-    togglePrintMode();
-    handlePrintContent();
-    togglePrintMode();
-  }
-
-
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -98,6 +77,22 @@ function App() {
   const [education, setEducation] = useState(fakeEducationArray);
 
   const isEditMode = selectedItemId !== null;
+
+  // Print 
+  const componentRef = useRef();
+  function togglePrintMode() {
+    const el = document.getElementById("cv-container");
+    el.classList.toggle('cv-print');
+  }
+  const handlePrintContent = useReactToPrint({ 
+    content: () => componentRef.current,
+    documentTitle: `My Resume`
+  });
+  function handlePrint() {
+    togglePrintMode();
+    handlePrintContent();
+    togglePrintMode();
+  }
 
   function handleNameChange(e){
     setName(e.target.value);
@@ -253,7 +248,8 @@ function App() {
             isEditMode={isEditMode}
             onCancel={handleCancelEdit}
           />
-          <button onClick={handlePrint}>Print</button>
+          <Print onClick={handlePrint}/>
+
         </section>
         <section className="cv">
           <CV 
