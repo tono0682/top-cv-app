@@ -2,6 +2,9 @@
 
 Welcome to Create Vitae, your go-to CV creation application! Craft stunning and professional resumes with ease using this React-powered tool. Create Vitae provides an intuitive interface for building your curriculum vitae while incorporating some clever wordplay (pun intended!).
 
+![CV App](public/cv-app.png)
+
+
 ## Technologies Used
 
 - **React**: A powerful JavaScript library for building user interfaces.
